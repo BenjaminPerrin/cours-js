@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;/* 1rem = 10px*/
+}
+body{
+    font-size: 1.4rem;/* soit 14px*/
+    font-family: arial;
+    color: white;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    background-color: #1E2337;
+    padding: 3rem;
+}
+
+.banniere-titre{
+    margin-bottom: 1rem;
+}
+.carre{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: 1px solid white;
+}
+
