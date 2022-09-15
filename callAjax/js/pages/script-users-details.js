@@ -1,22 +1,24 @@
 import { UserDetailsRow } from "../components/user-details-row.js";
 import { UsersService } from "../services/users.service.js";
+import { getParams } from "../utils/get-param.js";
 
-class Index {
+class ScriptUserDetails {
   constructor() {
     this.userService = new UsersService();
     this.$user = document.querySelector("#user");
+    this.id = getParams("id");
+    this.user = null;
   }
 
   async render() {
-    let idUser = this.userService.getParam();
-    let user = await this.userService.fetchUserById(idUser);
-    const row = UserDetailsRow(user);
+    this.user = await this.userService.fetchUserById(this.id);
+    const row = UserDetailsRow(this.user);
     this.$user.appendChild(row);
   }
 }
 
-const index = new Index();
-index.render();
+const scriptUserDetails = new ScriptUserDetails();
+scriptUserDetails.render();
 
 // const $users = document.querySelector("#users");
 // const queryString = window.location.search;
