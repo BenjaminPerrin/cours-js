@@ -1,10 +1,10 @@
 import { UserRow } from "../components/user-row.js";
-import { UsersService } from "../services/users.service.js";
+import UsersService from "../services/users.service.js";
 
 class Index {
-  constructor() {
+  constructor(UsersService) {
     this.users = [];
-    this.userService = new UsersService();
+    this.userService = UsersService;
     this.$users = document.querySelector("#users");
   }
 
@@ -17,7 +17,7 @@ class Index {
   }
 }
 
-const index = new Index();
+const index = new Index(UsersService);
 index.render();
 //const $users = document.querySelector("#users");
 

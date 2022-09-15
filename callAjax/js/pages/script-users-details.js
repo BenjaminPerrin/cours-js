@@ -1,10 +1,10 @@
 import { UserDetailsRow } from "../components/user-details-row.js";
-import { UsersService } from "../services/users.service.js";
+import UsersService from "../services/users.service.js";
 import { getParams } from "../utils/get-param.js";
 
 class ScriptUserDetails {
-  constructor() {
-    this.userService = new UsersService();
+  constructor(UsersService) {
+    this.userService = UsersService;
     this.$user = document.querySelector("#user");
     this.id = getParams("id");
     this.user = null;
@@ -17,7 +17,7 @@ class ScriptUserDetails {
   }
 }
 
-const scriptUserDetails = new ScriptUserDetails();
+const scriptUserDetails = new ScriptUserDetails(UsersService);
 scriptUserDetails.render();
 
 // const $users = document.querySelector("#users");
