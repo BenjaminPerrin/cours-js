@@ -24,4 +24,11 @@ export class UsersService {
         return user;
       });
   }
+
+  getParam() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const idUser = urlParams.get("id");
+    return idUser;
+  }
 }

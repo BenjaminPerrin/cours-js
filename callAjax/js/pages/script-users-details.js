@@ -8,9 +8,7 @@ class Index {
   }
 
   async render() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const idUser = urlParams.get("id");
+    let idUser = this.userService.getParam();
     let user = await this.userService.fetchUserById(idUser);
     const row = UserDetailsRow(user);
     this.$user.appendChild(row);
