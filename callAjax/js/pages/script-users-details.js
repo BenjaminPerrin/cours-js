@@ -3,18 +3,17 @@ import { UsersService } from "../services/users.service.js";
 
 class Index {
   constructor() {
-    this.users = [];
     this.userService = new UsersService();
-    this.$users = document.querySelector("#user");
+    this.$user = document.querySelector("#user");
   }
 
   async render() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const idUser = urlParams.get("id");
-    this.users = await this.userService.fetchUserById(idUser);
-    const row = UserDetailsRow(this.users);
-    this.$users.appendChild(row);
+    let user = await this.userService.fetchUserById(idUser);
+    const row = UserDetailsRow(user);
+    this.$user.appendChild(row);
   }
 }
 
