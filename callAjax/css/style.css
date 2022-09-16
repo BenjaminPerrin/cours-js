@@ -1,8 +1,10 @@
 .completed{
-    background-color: rgba(0, 128, 0, 0.603);
+    background-color: rgba(255, 0, 0, 0.616);
+
 }
 .uncompleted{
-    background-color: rgba(255, 0, 0, 0.616);
+    background-color: rgba(0, 128, 0, 0.603);
+
     text-decoration: line-through;
 }
 

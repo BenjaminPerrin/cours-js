@@ -8,8 +8,8 @@ export function TodoRow(todo) {
   const $viewDetails = document.createElement("a");
 
   todo.completed
-    ? $nameColumn.classList.add("completed")
-    : $nameColumn.classList.add("uncompleted");
+    ? $nameColumn.classList.add("uncompleted")
+    : $nameColumn.classList.add("completed");
 
   $viewDetails.innerText = todo.title;
   $viewDetails.setAttribute("href", `./todos-details.html?id=${todo.id}`);

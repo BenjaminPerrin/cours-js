@@ -8,8 +8,8 @@ export function TodoDetailsRow(todo) {
   $nameColumn.innerText = todo.title;
 
   todo.completed
-    ? $nameColumn.classList.add("completed")
-    : $nameColumn.classList.add("uncompleted");
+    ? $nameColumn.classList.add("uncompleted")
+    : $nameColumn.classList.add("completed");
 
   $todoRow.append($idColumn, $nameColumn);
   return $todoRow;
