@@ -2,7 +2,7 @@ export function checkFormError(param, errorParam) {
   if (!param.value) {
     errorParam.innerText = param.getAttribute("data-name") + ` cannot be empty`;
 
-    errorParam.style.color = "red";
+    errorParam.classList.add("error");
     return false;
   } else {
     errorParam.innerText = "";
